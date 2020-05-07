@@ -24,3 +24,12 @@ steps:
   args:
   - 'push'
   - 'gcr.io/$PROJECT_ID/cit262-groupx:$SHORT_SHA'
+
+# This step deploys the application in Kubernetes
+- name: 'gcr.io/cloud-builders/gke-deploy'
+  args:
+  - run
+  - --filename=app.yaml
+  - --image=gcr.io/$PROJECT_ID/cit262-groupx:$SHORT_SHA
+  - --location=cluster-1
+  - --cluster=cluster-1
