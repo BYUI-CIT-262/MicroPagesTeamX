@@ -25,7 +25,7 @@ spec:
             cpu: ".25"
             memory: "250Mi"
 ---
-apiVersion: apps/v1
+apiVersion: v1
 kind: Service
 metadata:
   name: cit262-groupx-service
@@ -43,5 +43,5 @@ metadata:
   name: cit262-groupx-balancer
 spec:
   backend:
-    serviceName: web
+    serviceName: cit262-groupx-service
     servicePort: 80  
