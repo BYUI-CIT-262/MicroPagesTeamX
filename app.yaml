@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cit262-groupx
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: cit262-groupx
+  template:
+    metadata:
+      labels:
+        app: cit262-groupx
+    spec:
+      containers:
+      - name: cit262-groupx
+        image: gcr.io/potent-galaxy-274115/cit262-groupx
+        ports:
+        - containerPort: 80
