@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: cit262-groupx
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: cit262-groupx
@@ -17,3 +17,10 @@ spec:
         image: gcr.io/potent-galaxy-274115/cit262-groupx
         ports:
         - containerPort: 80
+        resources:
+          limits:
+            cpu: ".5"
+            memory: "500Mi"
+          requests:
+            cpu: ".25"
+            memory: "250Mi"
