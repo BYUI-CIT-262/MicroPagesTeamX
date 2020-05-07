@@ -24,3 +24,15 @@ spec:
           requests:
             cpu: ".25"
             memory: "250Mi"
+----
+apiVersion: apps/v1
+kind: Service
+metadata:
+  name: cit262-groupx-service
+spec:
+  selector:
+    app: cit262-groupx
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
