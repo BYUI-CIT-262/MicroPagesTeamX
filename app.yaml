@@ -24,7 +24,7 @@ spec:
           requests:
             cpu: ".25"
             memory: "250Mi"
-----
+---
 apiVersion: apps/v1
 kind: Service
 metadata:
